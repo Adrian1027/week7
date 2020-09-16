@@ -30,10 +30,15 @@ app.get('/actors/:id', actors.getOne);
 app.put('/actors/:id', actors.updateOne);
 app.post('/actors/:id/movies', actors.addMovie);
 app.delete('/actors/:id', actors.deleteOne);
-
-
+app.delete('/actors/delete2/:id',actors.delete2);//delete actor and its movie
+app.delete('/actors/delete3/:aid/:mid',actors.delete3);//delete 
+app.get('/actors/:year1/:year2',actors.getYear6);// get year range movies
 //Movie RESTFul  endpoints
 app.get('/movies', movies.getAll);
 app.post('/movies', movies.createOne);
 app.get('/movies/:id', movies.getOne);
 app.put('/movies/:id', movies.updateOne);
+app.delete('/movies/:id',movies.deleteByID1);// del by id(movie)
+app.delete('/movies/delete4/:mid/:aid',movies.delete4);//delete
+app.post('/movies/actors/:id', movies.addActor5); 
+app.delete('/movies/delete9',movies.deleteYear9);// del by year range
